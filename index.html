@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .cake-image {
+            max-width: 100%;
+            height: auto;
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f00; /* confetti color */
+            animation: confetti-fall 1s infinite;
+        }
+        @keyframes confetti-fall {
+            0% { transform: translate(0, -100vh); }
+            100% { transform: translate(100vw, 100vh); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Birthday!</h1>
+    <img src="https://example.com/path/to/cake-image.jpg" alt="Birthday Cake" class="cake-image">
+    <div id="confetti-container"></div>
+    <p>Dear Robert,</p>
+    <p>Wishing you the happiest of birthdays! 🎉</p>
+    <p>Thank you for being an amazing software developer and an even better boyfriend. You're truly one of a kind!</p>
+    <p>Here's to another year of success, joy, and endless lines of code. I love you!</p>
+    <p>With all my love,</p>
+    <p>Kija en Emily</p>
+
+    <script>
+        // Create confetti
+        function createConfetti() {
+            const container = document.getElementById('confetti-container');
+            const confettiCount = 50; // Number of confetti particles
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * window.innerWidth + 'px';
+                confetti.style.animationDuration = Math.random() * 3 + 1 + 's'; // Random animation duration
+                container.appendChild(confetti);
+            }
+        }
+        // Run confetti animation
+        createConfetti();
+    </script>
+</body>
+</html>
